@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photo Gallery</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+        color: antiquewhite;
+      }
+
+      header a {
+        text-decoration: none;
+      }
+      header {
+        padding: 0 20px;
+        background-color: #1d1d1d;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #photogallery {
+        font-weight: bold;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        font-family: cursive;
+      }
+      #photogallery span {
+        color: lightsalmon;
+      }
+
+      ul {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      ul a {
+        color: white;
+      }
+      ul li {
+        padding: 5px;
+        margin-left: 10px;
+      }
+      ul li:hover {
+        transform: scale(1.1);
+        transition: 0.3ms;
+      }
+      #icon {
+        margin: auto 0;
+        display: none;
+        cursor: pointer;
+      }
+      #icon div {
+        width: 35px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+      .open .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+        transform: rotate(-45deg) translate(-6px, 6px);
+      }
+
+      .open .bar2 {
+        opacity: 0;
+      }
+
+      .open .bar3 {
+        -webkit-transform: rotate(45deg) translate(-6px, -8px);
+        transform: rotate(45deg) translate(-6px, -8px);
+      }
+
+      .open .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+      }
+      .mobile-menu {
+        display: none;
+        top: 50px;
+        left: 0;
+        height: fit-content;
+        width: 100%;
+        background-color: black;
+      }
+
+      .mobile-menu li {
+        margin: 5px;
+        width: fit-content;
+      }
+
+      .image-gallery {
+        box-sizing: border-box;
+        width: fit-content;
+
+        margin-block-end: 10px;
+      }
+      .image-gallery {
+        display: grid;
+        grid-gap: 10px;
+        justify-content: center;
+        box-sizing: content-box;
+      }
+
+      .image-gallery img {
+        width: 100%;
+        height: fit-content;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      @media screen and (max-width: 768px) {
+        header nav {
+          display: none;
+        }
+        #icon {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .image-gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .image-gallery {
+          grid-template-columns: repeat(3, 1fr);
+          grid-row-start: span 2;
+          width: 100%;
+        }
+
+        .image-gallery img:nth-child(2) {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="photogallery"><span>PHOTO GALLERY</span></div>
+      <nav>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/social">Social</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="icon" onclick="dropbox(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+          <li><a href="/about">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/social">Social</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="content">
+      <div class="image-gallery">
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?1"
+          alt="Image 1"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?2"
+          alt="Image 2"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?3"
+          alt="Image 3"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?4"
+          alt="Image 4"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?5"
+          alt="Image 5"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?6"
+          alt="Image 6"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?7"
+          alt="Image 7"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?8"
+          alt="Image 8"
+        />
+        <img
+          src="https://source.unsplash.com/collection/190728/800x600?9"
+          alt="Image 9"
+        />
+      </div>
+    </div>
+
+    <script src="dropbox.js"></script>
+  </body>
+</html>

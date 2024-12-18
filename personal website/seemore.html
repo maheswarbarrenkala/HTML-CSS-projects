@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Experience</title>
+    <link rel="stylesheet" href="styles/style1.css" />
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <script
+      src="https://kit.fontawesome.com/dfb903bacb.js"
+      crossorigin="anonymous"
+    ></script>
+    
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img
+            src="images/logo_4-removebg-preview.png"
+            alt="image"
+            class="logo"
+          />
+          <ul id="sidemenu">
+            <li><a href="firstpage.html">Homepage</a></li>
+            <li><a href="#work">Work Experience</a></li>
+            <li><a href="#research">Research</a></li>
+
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div id="work">
+          <div class="container">
+            <div class="work">
+              <h2 class="sub-title">
+                Accenture Information Technology Company
+              </h2>
+              <p>
+                Completed my Accenture Technology training on Java, Advanced
+                Java, MySQL, Agile, Scrum, RDBMS, Full Stack Engineering,
+                Robotic Process Automation, and Accenture Internal training.
+                Skilled with Application Development, Complete Web Development
+                and bootstrap, Handling new Technologies and upgrades, Handling
+                Incidents, and Management organizing. Worked on Accenture
+                internal projects and client projects to better understand how
+                the organization works and gain connections. Worked closely with
+                other Team leads, Boost Team, Associate manager, Du lead, and
+                Clients.
+              </p>
+              <p>
+                Worked on Web site development on Front-End and Back-End for the
+                client application using Java, MySQL, and Nginx Server. For the
+                Applications to send emails to the product users and clients I
+                have added an SMTP mailing system and LDAP for system security.
+                I have developed a Bot to work on Daily checks and supervision
+                of the server and the applications SolutionP, Altao, and Ariba
+                administrative Sites for the realms. I have added Captcha for
+                the client website, Production, and Pre-Production sites. Worked
+                on the URL change, Website name change, and Link redirecting to
+                the new brand link and handling the Cloud storage and data
+                transfer from schemas in the Database management system.
+              </p>
+              <p>
+                Attended and have been involved in many company and client
+                meetings for productivity and under my guidance, my team has
+                increased its productivity by 75% and increased work efficiency.
+                Recently worked on the Amazon AWS Schema Conversion tool for the
+                transfer of Data and Application code from the Microsoft Azure
+                cloud Database to Amazon Aurora Postgre SQL.
+              </p>
+              <div class="tab-titles">
+                <p
+                  class="tab-links active-link"
+                  onclick="opentab('technologies')"
+                >
+                  Technologies
+                </p>
+
+                <p class="tab-links" onclick="opentab('clients')">Clients</p>
+              </div>
+              <div class="tab-contents active-tab" id="technologies">
+                <ul>
+                  <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
+                  <li>
+                    <span>Web Development</span><br />HTML, CSS, Java Script,
+                    Core Java, MYSQL, RDBMS,RPA
+                  </li>
+                  <li>
+                    <span>App Development</span><br />Building android/ios apps
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="clients">
+                <ul>
+                  <li><span>Accenture</span><br />India client</li>
+                  <li><span>Total Energies</span><br />Europe Market</li>
+                  <li><span>Wizard</span><br />US Market</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="research">
+          <div class="container">
+            <h2 class="sub-title">Research, Projects and Certifications</h2>
+            <p></p>
+            <div class="tab-titles">
+              <p class="tab-links" onclick="opentab('researchpaper')">
+                Research Topics
+              </p>
+              <p class="tab-links" onclick="opentab('projects')">Projects</p>
+              <p class="tab-links" onclick="opentab('certifications')">
+                Certifications
+              </p>
+            </div>
+            <div class="tab-contents" id="researchpaper">
+              <ul>
+                <li><span>IEEE</span><br />Banking Automation using IoT</li>
+                <li><span>Osmania University</span><br />Bot Development</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="projects">
+              <ul>
+                <li>
+                  <span>IoT projects</span><br />Tanker Saftey and Monitoring
+                  system using Bio-Metrics, Banking Automation
+                </li>
+                <li>
+                  <span>Software Application</span><br />Online Web Application
+                </li>
+                <li>
+                  <span>App Development</span><br />Building android/ios apps
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="certifications">
+              <ul>
+                <li>
+                  <span>CAA and Codeacadamey</span><br />HTML, CSS, Java Script
+                  and Bootstrap
+                </li>
+                <li>
+                  <span>Oracle and NIIT</span><br />Core Java and Advanced Java
+                </li>
+                <li>
+                  <span>Automation Anywhere and Accenture</span><br />Robotic
+                  Process Automation practitioner
+                </li>
+                <li>
+                  <span>Amazon</span><br />AWS Cloud training and SCT tool
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; Maheswar.</p>
+      </div>
+    </div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      var side = document.getElementById("sidemenu");
+      function openmenu() {
+        side.style.right = "0";
+      }
+      function closemenu() {
+        side.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
